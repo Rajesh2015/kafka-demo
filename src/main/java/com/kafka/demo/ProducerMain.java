@@ -13,7 +13,7 @@ public class ProducerMain {
 
     }
     static class Producer {
-        String newArgs[] = {"20", "rajeshtest", Util.INSTNACE.getConfig("  confluent-1")};
+        String newArgs[] = {"20", "rajeshtest", Util.INSTNACE.getBrokerConfig("  confluent-1")};
         int events = Integer.parseInt(newArgs[0]);
         String topic = newArgs[1];
         String brokers = newArgs[2];

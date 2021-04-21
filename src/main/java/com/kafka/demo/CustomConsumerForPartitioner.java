@@ -17,7 +17,7 @@ public class CustomConsumerForPartitioner {
         String topicName = args[0].toString();
         Properties props = new Properties();
 
-        props.put("bootstrap.servers", Util.INSTNACE.getConfig("  confluent-1"));
+        props.put("bootstrap.servers", Util.INSTNACE.getBrokerConfig("  confluent-1"));
         props.put("group.id", "rajesh-java");
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");

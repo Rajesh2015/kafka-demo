@@ -12,7 +12,7 @@ public class CustomProducer {
         String topicName = "rajesh-custom-topic-java";
 
         Properties props = new Properties();
-        props.put("bootstrap.servers", Util.INSTNACE.getConfig("  confluent-1"));
+        props.put("bootstrap.servers", Util.INSTNACE.getBrokerConfig("  confluent-1"));
         props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("partitioner.class", CustomPartitioner.class.getName());

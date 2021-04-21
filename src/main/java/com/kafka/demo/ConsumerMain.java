@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 
 public class ConsumerMain {
     public static void main(String[] args) {
-        String newArgs[] = {Util.INSTNACE.getConfig("  confluent-1"), "TestGroup","rajeshtest"};
+        String newArgs[] = {Util.INSTNACE.getBrokerConfig("  confluent-1"), "TestGroup","rajeshtest"};
         Consumer con = new Consumer(newArgs[0], newArgs[1], newArgs[2]);
         Properties props=con.createConsumerConfig();
         con.runConsumer(props);
@@ -68,7 +68,6 @@ public class ConsumerMain {
             Executors.newSingleThreadExecutor().execute(() -> {
                 while (true) {
                     ConsumerRecords records = consumer.poll(1000);
-
                     Iterator recorsIter = records.iterator();
                     while (recorsIter.hasNext()) {
                         ConsumerRecord record = (ConsumerRecord) recorsIter.next();

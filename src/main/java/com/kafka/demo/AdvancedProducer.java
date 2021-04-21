@@ -29,7 +29,7 @@ public class AdvancedProducer {
         Properties props = new Properties();
 
         //Assign localhost id
-        props.put("bootstrap.servers", Util.INSTNACE.getConfig("  confluent-1")+Util.INSTNACE.getConfig("  confluent-2"));
+        props.put("bootstrap.servers", Util.INSTNACE.getBrokerConfig("  confluent-1")+Util.INSTNACE.getBrokerConfig("  confluent-2"));
 
         //Set acknowledgements for producer requests.
         props.put("acks", "all");
