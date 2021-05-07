@@ -36,7 +36,7 @@ public class KafkaAvroConsumer {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
 
-        String topic = "topic1";
+        String topic = "navaneeth-avro";
         final Consumer<String, GenericRecord> consumer = new KafkaConsumer<String, GenericRecord>(props);
         consumer.subscribe(Arrays.asList(topic));
 

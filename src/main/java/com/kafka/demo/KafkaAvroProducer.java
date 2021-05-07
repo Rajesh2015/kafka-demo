@@ -36,7 +36,7 @@ public class KafkaAvroProducer {
         avroRecord.put("f1", "value1");
 
 
-        ProducerRecord<Object, Object> record = new ProducerRecord<>("topic1", key, avroRecord);
+        ProducerRecord<Object, Object> record = new ProducerRecord<>("navaneeth-avro", key, avroRecord);
         try {
             producer.send(record);
         } catch (SerializationException e) {
